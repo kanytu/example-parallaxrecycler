@@ -1,0 +1,2 @@
+include ':app', ':parallaxrecyclerview'
+project(":parallaxrecyclerview").projectDir = file("E:\\Development\\android\\MyApplication3\\parallaxrecyclerview")
