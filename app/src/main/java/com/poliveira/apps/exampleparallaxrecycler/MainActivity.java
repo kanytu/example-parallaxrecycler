@@ -49,12 +49,14 @@ public class MainActivity extends Activity {
                 return content.size();
             }
         });
-
-        stringAdapter.setParallaxHeader(getLayoutInflater().inflate(R.layout.my_header, myRecycler, false), myRecycler);
+        View fakeHeader = getLayoutInflater().inflate(R.layout.my_header, myRecycler, false);
+        fakeHeader.setAlpha(0); //NOTICE THIS ALPHA CHANGE... THIS WILL MAKE THE FAKE HEADER INVISIBLE.
+        final View realHeader = findViewById(R.id.imageView2);
+        stringAdapter.setParallaxHeader(fakeHeader, myRecycler); //HE SET THE FAKE HEADER HERE. IT WILL WORK AS A PLACEHOLDER
         stringAdapter.setOnParallaxScroll(new ParallaxRecyclerAdapter.OnParallaxScroll() {
             @Override
             public void onParallaxScroll(float percentage, float offset, View parallax) {
-                //TODO: implement toolbar alpha. See README for details
+                realHeader.setTranslationY(-offset * 0.5f); //TRANSLATE THE REAL HEADER TOO. MAKE SURE 0.5f MATCHES THE SAME SCROLL_MULTIPLIER
             }
         });
         myRecycler.setAdapter(stringAdapter);
