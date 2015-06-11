@@ -16,5 +16,5 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':parallaxrecyclerview')
+    compile 'com.github.kanytu:android-parallax-recyclerview:v1.2'
 }
