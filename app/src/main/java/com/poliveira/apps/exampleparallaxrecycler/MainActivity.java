@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.poliveira.parallaxrecyclerview.adapter.ParallaxRecyclerAdapter;
+import com.poliveira.parallaxrecycleradapter.ParallaxRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
